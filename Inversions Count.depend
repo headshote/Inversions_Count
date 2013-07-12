@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1373321101 source:c:\users\nsf001\dropbox\algorithms\code\1\inversions count\inversion_count.c
+	<stdio.h>
+	<stdlib.h>
+	"inversion_count.h"
+
+1373320745 c:\users\nsf001\dropbox\algorithms\code\1\inversions count\inversion_count.h
+	<stdio.h>
+	<stdlib.h>
+
+1373311271 source:c:\users\nsf001\dropbox\algorithms\code\1\inversions count\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inversion_count.h"
+
