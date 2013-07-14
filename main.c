@@ -24,42 +24,42 @@ void test()
     data* result;
 
     result = sortAndCount( array1, 6);
-    printf("# of inversions = %llu \n", result->inversions);
+    printf("# of inversions = %llu \n", result->inversions); //3
     free(result->array);
     free(result);
 
     result = sortAndCount( array2, 5);
-    printf("# of inversions = %llu \n", result->inversions);
+    printf("# of inversions = %llu \n", result->inversions); //4
     free(result->array);
     free(result);
 
     result = sortAndCount( array3, 5);
-    printf("# of inversions = %llu \n", result->inversions);
+    printf("# of inversions = %llu \n", result->inversions); //10
     free(result->array);
     free(result);
 
     result = sortAndCount( array4, 6);
-    printf("# of inversions = %llu \n", result->inversions);
+    printf("# of inversions = %llu \n", result->inversions); //5
     free(result->array);
     free(result);
 
     result = sortAndCount( array5, 6);
-    printf("# of inversions = %llu \n", result->inversions);
+    printf("# of inversions = %llu \n", result->inversions); //0
     free(result->array);
     free(result);
 
     result = sortAndCount( array6, 15);
-    printf("# of inversions = %llu \n", result->inversions);
+    printf("# of inversions = %llu \n", result->inversions); //56
     free(result->array);
     free(result);
 
     result = sortAndCount( array7, 50);
-    printf("# of inversions = %llu \n", result->inversions);
+    printf("# of inversions = %llu \n", result->inversions); //590
     free(result->array);
     free(result);
 
     result = sortAndCount( array8, 100);
-    printf("# of inversions = %llu \n", result->inversions);
+    printf("# of inversions = %llu \n", result->inversions); //2372
     free(result->array);
     free(result);
 
@@ -68,26 +68,34 @@ void test()
         array9[j] = i;
     }
     result = sortAndCount( array9, 100000);
-    printf("# of inversions = %llu \n", result->inversions);
+    printf("# of inversions = %llu \n", result->inversions); //4999950000
     free(result->array);
     free(result);
     return;
 }
 
-int main()
+int main( int argc, char* argv[])
 {
     int array[150000], i;
     data* result;
     FILE* fp;
+    char* fileName;
+
+    if( argc < 2)
+    {
+        printf("Usage is inversion_count file_with_numbers.txt\n");
+        return EXIT_FAILURE;
+    }
+
+    fileName = argv[1];
 
     //Opening file
-    fp = fopen( "IntegerArray.txt", "r" );
-    //fp = fopen( "puny.txt", "r" );
-    //fp = fopen( "medium.txt", "r" );
+    fp = fopen( fileName, "r" );
 
     //Failed in opening
     if( fp == NULL )
     {
+        printf("Could not open the file %s\n", fileName);
         return EXIT_FAILURE;
     }
     //Succeed in opening that file
@@ -106,7 +114,7 @@ int main()
     //Count # of inversions in that array of numbers from file with our function
     result = sortAndCount( array, i);
 
-    /*//print out results of work
+    /*//print out sorted array results of work
     for( int j = 0; j < i; j++)
     {
         printf("SortedArray[%d] = %d\n", j, result->array[j]);
@@ -120,7 +128,7 @@ int main()
 
     printf("Done!\n");
 
-    test();
+    //test(); //run it to test the correctness
 
     return EXIT_SUCCESS;
 }
