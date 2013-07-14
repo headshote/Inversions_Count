@@ -83,7 +83,7 @@ int main( int argc, char* argv[])
 
     if( argc < 2)
     {
-        printf("Usage is inversion_count file_with_numbers.txt\n");
+        printf("Usage is inversions_count file_with_numbers.txt\n");
         return EXIT_FAILURE;
     }
 
@@ -119,14 +119,12 @@ int main( int argc, char* argv[])
     {
         printf("SortedArray[%d] = %d\n", j, result->array[j]);
     }*/
-    printf("# of inversions = %llu \n", result->inversions);
+    printf("%llu \n", result->inversions); //Print # of inversions
 
     //Close file stream
     fclose( fp );
     free(result->array);
     free(result);
-
-    printf("Done!\n");
 
     //test(); //run it to test the correctness
 
