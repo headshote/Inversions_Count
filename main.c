@@ -114,7 +114,7 @@ int main( int argc, char* argv[])
     //Count # of inversions in that array of numbers from file with our function
     result = sortAndCount( array, i);
 
-    /*//print out sorted array results of work
+    /*//print out sorted array
     for( int j = 0; j < i; j++)
     {
         printf("SortedArray[%d] = %d\n", j, result->array[j]);
